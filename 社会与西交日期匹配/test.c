@@ -3,11 +3,13 @@
 //#include <stdlib.h>
 //int main() {
 //	char* a = "date.txt";
-//	FILE* b = fopen(a, "w");
+//	/*FILE* b = fopen(a, "w+");
 //	char c[] = "20240307" ;
-//	
 //    scanf("%s", &c);
 //	int d=fputs(c,b);
-//	fclose(b);
+//	fclose(b);*/
+//	FILE* z = fopen(a, "r");
+//	int e=fgetc(z);
+//	fclose(z);
 //	return 0;
 //}
