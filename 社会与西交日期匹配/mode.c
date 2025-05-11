@@ -4,13 +4,13 @@
 #include <time.h>
 int rqpd() {//日期判断
 	time_t ti;
+	time(&ti);
 	struct tm* p;
 	p = gmtime(&ti);
-	time(&ti);
 	if (p->tm_mon==8&&p->tm_mday==24) {
 		return 2;
 	}
-	else if(p->tm_mon == 1 && p->tm_mday == 16){
+	else if(p->tm_mon == 1 && p->tm_mday == 29){
 		return 1;
 	}
 	else {
@@ -21,20 +21,38 @@ void dom(int ab[]) {
 	int k[12] = { 0 };
 	int ef[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
 }
+int wjcl() {
+	char* wj = "date.txt";//相对路径
+	int bb = rqpd();
+	if (bb == 2 || bb == 1) {
+		FILE* b = fopen(wj, "w");
+		printf("该更新日期了\n");
+		int c = fclose(b);
+		if (c != 0) {
+			printf("你写的破程序出bug关不了文件了\n");
+			return 0;
+		}
+	}
+	FILE* n = fopen(wj, "r");
+	char e = fgetc(n);
+	if (e == -1)
+	{
+		int c[] = { 20240307 };//可以
+		printf("请输入这学期开学年月日\n示例:2024年3月7日开学\n20240307\n");
+		scanf("%d", &c);
+		int nn = fputs(c, n);
+		if (nn < 0) {
+			printf("写入文件失败\n");
+			return 0;
+		}
+	}
+}
 int main() {
 	int dayOfMonth[12] = { 0, 12, 31, 30, 31, 30, 31,0,0,0,0,0 };//xj每个月的天数,用static数组里未定义的值是零,否则为垃圾值
-	char* wj = "date.txt";
-	int bb = rqpd();
-	if (bb==2 || bb==1) {
-		FILE* b = fopen(wj,"w");
-		printf("该更新日期了\n");
-		int c[] = {20240307};//可以
-		printf("请输入这学期开学年月日\n示例:2024年3月7日开学\n20240307\n");
-		scanf("%d",&c);
-		fputs(c,b);
-     fclose(b);
-	}
 	int m, d, w, r, sum;
+	if (wjcl() == 0) {
+		return 0;
+	}
 s:	m = 0, d = 0, w = 0, r = 0,sum=0;//month,day,week,现在是星期几,总共多少天
 	printf("请输入日期(月 日,输入0 0退出程序):\n");
 	scanf("%d %d", &m, &d);
