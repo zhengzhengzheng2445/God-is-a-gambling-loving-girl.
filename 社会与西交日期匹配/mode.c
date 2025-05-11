@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 int rqpd() {//日期判断
 	time_t ti;
 	time(&ti);
@@ -10,18 +11,30 @@ int rqpd() {//日期判断
 	if (p->tm_mon==8&&p->tm_mday==24) {
 		return 2;
 	}
-	else if(p->tm_mon == 1 && p->tm_mday == 29){
+	else if(p->tm_mon == 2 && p->tm_mday == 3){
 		return 1;
 	}
 	else {
 		return 3;
 	}
 }
-void dom(int ab[]) {
-	int k[12] = { 0 };
-	int ef[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+void dom(int ab[], char sj[]) {
+	int ef[12] = { 30,31,30,31,31,28,31,30,31,30,31,31 };
+	char year[5],month[3],day[3];
+	strncpy(year, sj + 1, 4);
+	strncpy(month, sj + 5, 2);
+	strncpy(day, sj + 7, 2);
+	year[5] = '\0', month[3] = '\0', day[3] = '\0';
+	int yy = year,mm=month,dd=day;
+	for (int i = 0; i < (mm+4)-1; i++) {
+			ab[i] = 0;
+		}
+		ab[mm+4] = ab[mm+4] - dd + 1;
+		for (int i = 0; i > mm; i++) {
+			ab[i] = ef[i];
+		}
 }
-int wjcl() {
+int wjcl(char sj[]) {
 	char* wj = "date.txt";//相对路径
 	int bb = rqpd();
 	if (bb == 2 || bb == 1) {
@@ -45,12 +58,28 @@ int wjcl() {
 			printf("写入文件失败\n");
 			return 0;
 		}
+		int cc = fclose(n);
+		if (cc != 0) {
+			printf("你写的破程序出bug关不了文件了\n");
+			return 0;
+		}
+	}
+	char* nt = fgets(sj,1024,n);
+	if (nt == NULL) {
+		printf("你写的破程序出bug读不了文件了\n");
+		return 0;
+	}
+	int c = fclose(n);
+	if (c != 0) {
+		printf("你写的破程序出bug关不了文件了\n");
+		return 0;
 	}
 }
 int main() {
 	int dayOfMonth[12] = { 0, 12, 31, 30, 31, 30, 31,0,0,0,0,0 };//xj每个月的天数,用static数组里未定义的值是零,否则为垃圾值
 	int m, d, w, r, sum;
-	if (wjcl() == 0) {
+	char sj[1024];
+	if (wjcl(sj) == 0) {
 		return 0;
 	}
 s:	m = 0, d = 0, w = 0, r = 0,sum=0;//month,day,week,现在是星期几,总共多少天
@@ -59,8 +88,8 @@ s:	m = 0, d = 0, w = 0, r = 0,sum=0;//month,day,week,现在是星期几,总共多少天
 	if (m == 0 && d == 0) {
 		return 0;
 	}
-	dom(dayOfMonth);
-	for (int i = 0; i<m-1; i++) {
+	dom(dayOfMonth,sj);
+	for (int i = 0; i < (m+4)%12-1; i++) {
 		sum += dayOfMonth[i];
 	}
 	sum += d;
