@@ -1,6 +1,5 @@
 ﻿  mode.c
-C:\Users\13846\source\c作品集\各种项目\社会与西交日期匹配\mode.c(28,6): warning C4047: “初始化”:“int”与“char *”的间接级别不同
-C:\Users\13846\source\c作品集\各种项目\社会与西交日期匹配\mode.c(28,16): warning C4047: “初始化”:“int”与“char *”的间接级别不同
-C:\Users\13846\source\c作品集\各种项目\社会与西交日期匹配\mode.c(28,25): warning C4047: “初始化”:“int”与“char *”的间接级别不同
-C:\Users\13846\source\c作品集\各种项目\社会与西交日期匹配\mode.c(85,1): warning C4715: “wjcl”: 不是所有的控件路径都返回值
-  社会与西交日期匹配.vcxproj -> C:\Users\13846\source\c作品集\各种项目\社会与西交日期匹配\x64\Debug\社会与西交日期匹配.exe
+C:\Users\13846\source\blank\God-is-a-gambling-loving-girl.-shiyan\社会与西交日期匹配\mode.c(28,6): warning C4047: “初始化”:“int”与“char *”的间接级别不同
+C:\Users\13846\source\blank\God-is-a-gambling-loving-girl.-shiyan\社会与西交日期匹配\mode.c(28,16): warning C4047: “初始化”:“int”与“char *”的间接级别不同
+C:\Users\13846\source\blank\God-is-a-gambling-loving-girl.-shiyan\社会与西交日期匹配\mode.c(28,25): warning C4047: “初始化”:“int”与“char *”的间接级别不同
+  社会与西交日期匹配.vcxproj -> C:\Users\13846\source\blank\God-is-a-gambling-loving-girl.-shiyan\社会与西交日期匹配\x64\Debug\社会与西交日期匹配.exe

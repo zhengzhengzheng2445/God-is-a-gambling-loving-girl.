@@ -24,7 +24,7 @@ void dom(int ab[], char sj[]) {
 	strncpy(year, sj + 1, 4);
 	strncpy(month, sj + 5, 2);
 	strncpy(day, sj + 7, 2);
-	year[5] = '\0', month[3] = '\0', day[3] = '\0';
+	year[4] = '\0', month[2] = '\0', day[2] = '\0';//从0开始
 	int yy = year,mm=month,dd=day;
 	for (int i = 0; i < (mm+4)-1; i++) {
 			ab[i] = 0;
@@ -34,7 +34,7 @@ void dom(int ab[], char sj[]) {
 			ab[i] = ef[i];
 		}
 }
-int wjcl(char sj[]) {
+int wjcl(char sj[]) {//记得最后必须得返回数字
 	char* wj = "date.txt";//相对路径
 	int bb = rqpd();
 	if (bb == 2 || bb == 1) {
@@ -55,8 +55,8 @@ int wjcl(char sj[]) {
 		printf("打不开\n");
 		return 0;
 	}
-	char e = fgetc(n);
-	if (e == '-1')//千万分清int和char和字符串
+	int e = fgetc(n);
+	if (e == -1)//千万分清int和char和字符串
 	{
 		char c[] = "20240307";//可以
 		printf("请输入这学期开学年月日\n示例:2024年3月7日开学\n20240307\n");
@@ -68,20 +68,33 @@ int wjcl(char sj[]) {
 		}
 		int cc = fclose(n);
 		if (cc != 0) {
+			printf("你写的破程序出bug关不了文件了55\n");
+			return 0;
+		}
+	}
+	if (e!=-1) {
+		int cc = fclose(n);
+		if (cc != 0) {
 			printf("你写的破程序出bug关不了文件了2\n");
 			return 0;
 		}
 	}
-	char* nt = fgets(sj,1024,n);
+		FILE* tt = fopen(wj, "r");
+		if (tt == NULL) {
+			printf("打不开\n");
+			return 0;
+		}
+	char* nt = fgets(sj,1024,tt);
 	if (nt == NULL) {
 		printf("你写的破程序出bug读不了文件了3\n");
 		return 0;
 	}
-	int hhh = fclose(n);
+	int hhh = fclose(tt);
 	if (hhh != 0) {
 		printf("你写的破程序出bug关不了文件了4\n");
 		return 0;
 	}
+	return 1;
 }
 int main() {
 	int dayOfMonth[12] = { 0, 12, 31, 30, 31, 30, 31,0,0,0,0,0 };//xj每个月的天数,用static数组里未定义的值是零,否则为垃圾值
