@@ -56,7 +56,7 @@ int wjcl(char sj[]) {
 		return 0;
 	}
 	char e = fgetc(n);
-	if (e == '-1')//千万分清int和char和字符串
+	if (e == -1)
 	{
 		char c[] = "20240307";//可以
 		printf("请输入这学期开学年月日\n示例:2024年3月7日开学\n20240307\n");
