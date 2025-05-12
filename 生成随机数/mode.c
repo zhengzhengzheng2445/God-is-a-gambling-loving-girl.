@@ -1,0 +1,78 @@
+//你能写中文注释吗,选项卡是tab
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void shuffle(int s,int o,int l){
+	int* result = malloc((o - s + 1) * sizeof(int));
+	if (result == NULL) {
+		printf("内存申请失败\n");
+		exit(-1);//表示因错误退出
+	}
+	for (int i = 0; i <o-s+1; i++) {
+		result[i] = s + i;
+	}
+	for (int i = 0; i < l; i++) {
+		int random = rand() % (o - s+1 - i), temp = 0;
+		temp = result[o-s-i];
+		result[o - s - i] = result[random];
+		printf("%d\t", result[o - s - i]);
+		result[random] = temp;
+	}
+	printf("\n\n\n");
+	free(result);
+	result = NULL;
+}//洗牌
+void commonExecution(int s, int o, int l) {
+	for (int i = 0; i <l; i++) {
+		printf("%d\t",rand() % (o - s +1) + s);
+	}
+	printf("\n\n\n");
+}//普通执行
+int main() {
+	srand(time(NULL));
+	while(1){
+		printf("请选择模式:\n0.退出程序\n1.普通模式:输出可重复的随机数\n2.洗牌模式输出不可重复的随机数\n");
+		int start = 0, over = 0, length = 0, control = 0,n=0;//n重复次数
+		while (1) {
+			scanf("%d", &control);
+			if (control > 2) {
+				printf("输入错误\n");
+			}
+			else {
+				break;
+			}
+		}//校验control有效性
+		if (control == 0) {
+			return 0;
+		}
+		printf("请输入随机数的范围开始,结尾,数量和重复次数,中间用空格间隔\n例如:3到100之间要八个随机数重复执行5次,3 100 8 5\n");
+		if (control == 2) {
+			while (1) {
+				scanf("%d %d %d %d", &start, &over, &length, &n);
+				if (start >= over || (over - start) < length || n <= 0) {
+					printf("数据输入错误\n");
+				}
+				else {
+					break;
+				}
+			}//校验输入有效性
+			for (int i = 0; i < n;i++) {
+				shuffle(start, over, length);
+			}
+		}else {
+			while (1) {
+				scanf("%d %d %d %d", &start, &over, &length, &n);
+				if (start >= over || n <= 0) {
+					printf("数据输入错误\n");
+				}
+				else {
+					break;
+				}
+			}//校验输入有效性
+			for (int i = 0; i < n; i++) {
+				commonExecution(start, over, length);
+			}
+		}
+	}
+	return 0;
+}
