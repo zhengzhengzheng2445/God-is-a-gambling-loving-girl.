@@ -21,7 +21,7 @@
     <ClCompile Include="test.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="fillHandle.c">
+    <ClCompile Include="fileHandle.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dateFill.c">
@@ -46,7 +46,7 @@
     <ClInclude Include="dateFill.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="fillHandle.h">
+    <ClInclude Include="fileHandle.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

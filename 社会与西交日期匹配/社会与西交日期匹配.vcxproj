@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClCompile Include="dateCheck.c" />
     <ClCompile Include="dateFill.c" />
-    <ClCompile Include="fillHandle.c" />
+    <ClCompile Include="fileHandle.c" />
     <ClCompile Include="mode.c">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -142,7 +142,7 @@
   <ItemGroup>
     <ClInclude Include="dateCheck.h" />
     <ClInclude Include="dateFill.h" />
-    <ClInclude Include="fillHandle.h" />
+    <ClInclude Include="fileHandle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
