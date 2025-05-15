@@ -127,11 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="mode.c" />
+    <ClCompile Include="dateCheck.c" />
+    <ClCompile Include="dateFill.c" />
+    <ClCompile Include="fillHandle.c" />
+    <ClCompile Include="mode.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="test.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="date.txt" />
+    <Text Include="remead.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dateCheck.h" />
+    <ClInclude Include="dateFill.h" />
+    <ClInclude Include="fillHandle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -21,10 +21,33 @@
     <ClCompile Include="test.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="fillHandle.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dateFill.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dateCheck.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="date.txt">
       <Filter>源文件</Filter>
     </Text>
+    <Text Include="remead.txt">
+      <Filter>源文件</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dateCheck.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dateFill.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="fillHandle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
