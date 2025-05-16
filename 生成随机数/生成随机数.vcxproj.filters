@@ -18,5 +18,16 @@
     <ClCompile Include="mode.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="shuffle.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="commonExecution.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="randNum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
