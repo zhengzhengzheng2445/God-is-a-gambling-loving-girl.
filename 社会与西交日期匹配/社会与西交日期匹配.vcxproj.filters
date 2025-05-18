@@ -33,8 +33,17 @@
     <ClCompile Include="defenceMistake.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="remind.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="timeGet.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="testc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="test.c">
-      <Filter>资源文件</Filter>
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +65,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="dateTrans.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
