@@ -1,0 +1,1 @@
+//void timeGet(int tmRecord[])
