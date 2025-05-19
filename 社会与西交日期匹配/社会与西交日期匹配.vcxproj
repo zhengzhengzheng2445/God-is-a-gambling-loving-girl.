@@ -148,6 +148,7 @@
     <ClInclude Include="dateCheck.h" />
     <ClInclude Include="dateFill.h" />
     <ClInclude Include="dateTrans.h" />
+    <ClInclude Include="defenceMistake.h" />
     <ClInclude Include="fileHandle.h" />
     <ClInclude Include="test.h" />
   </ItemGroup>

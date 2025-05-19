@@ -3,7 +3,7 @@
 void datetrans();
 void photoView();
 void updateData();
-int defenceMistake(int checkVar, int start, int over);
+
 void timeGet(int tmRecord[]);
 void remind(int a[]);
 

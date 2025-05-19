@@ -70,5 +70,8 @@
     <ClInclude Include="test.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="defenceMistake.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
