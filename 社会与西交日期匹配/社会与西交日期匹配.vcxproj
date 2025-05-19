@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="dateCheck.c" />
     <ClCompile Include="dateFill.c" />
+    <ClCompile Include="dateTrans.c" />
     <ClCompile Include="defenceMistake.c" />
     <ClCompile Include="fileHandle.c" />
     <ClCompile Include="main.c" />

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "defenceMistake.h"
 //selectFunction = defenceMistake(selectFunction, 1, 3);
-int defenceMistake(int checkVar,int start ,int over){                  //´ı¼ì²é±äÁ¿,¿ªÊ¼,½áÊø
+void defenceMistake(int* checkVar,int start ,int over){                  //´ı¼ì²é±äÁ¿,¿ªÊ¼,½áÊø
 	if (start > over) {
 		int tem = start;
 		start = over;
@@ -10,10 +10,11 @@ int defenceMistake(int checkVar,int start ,int over){                  //´ı¼ì²é±
 	}
 	while (1) 
 	{
-		scanf("%d", &checkVar);
-		if (checkVar<=over&& checkVar>=start) {
-			return checkVar;
+		scanf("%d", checkVar);
+		if ((*checkVar) <= over && (*checkVar) >= start) {
+			break;
+		}else{
+			printf("Êı¾İÊäÈë´íÎóÇëÖØĞÂÊäÈë\n");
 		}
-		printf("Êı¾İÊäÈë´íÎóÇëÖØĞÂÊäÈë\n");
 	}
 }
