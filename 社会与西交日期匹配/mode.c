@@ -13,7 +13,7 @@
 //		sum = 0;//month,day,week,现在是星期几,总共多少天
 //		printf("请输入日期(月 日,输入0 0退出程序):\n");
 //		dateFill(dayOfMonth, schoolStartTime);
-//		scanf("%d %d", &month, &day);
+//		
 //		if (month == 0 && day == 0) {
 //			return 0;
 //		}

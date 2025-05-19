@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "test.h"
-void datetrans() {
-    printf("桩函数：日期转换功能被调用\n");
-}
+
 
 void photoView() {
     printf("桩函数：图片查看功能被调用\n");

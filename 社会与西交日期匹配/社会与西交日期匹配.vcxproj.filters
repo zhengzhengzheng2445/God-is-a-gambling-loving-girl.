@@ -45,6 +45,9 @@
     <ClCompile Include="test.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="dateTrans.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="date.txt">
