@@ -12,10 +12,6 @@ void updateData() {
     printf("桩函数：数据更新功能被调用\n");
 }
 
-int defenceMistake(int checkVar, int start, int over) {
-    printf("桩函数：a被调用\n");
-    return 0;
-}
 
 void timeGet(int tmRecord[]) {
     printf("桩函数：b被调用\n");
