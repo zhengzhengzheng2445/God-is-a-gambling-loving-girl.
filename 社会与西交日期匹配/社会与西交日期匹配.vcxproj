@@ -137,6 +137,7 @@
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="remind.c" />
+    <ClCompile Include="solarLunarTrans.c" />
     <ClCompile Include="test.c" />
     <ClCompile Include="testc.c" />
     <ClCompile Include="timeGet.c" />
@@ -151,6 +152,7 @@
     <ClInclude Include="dateTrans.h" />
     <ClInclude Include="defenceMistake.h" />
     <ClInclude Include="fileHandle.h" />
+    <ClInclude Include="solarLunarTrans.h" />
     <ClInclude Include="test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
