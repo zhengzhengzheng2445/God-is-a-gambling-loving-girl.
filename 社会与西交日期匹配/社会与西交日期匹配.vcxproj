@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.c" />
     <ClCompile Include="dateCheck.c" />
     <ClCompile Include="dateFill.c" />
     <ClCompile Include="fileHandle.c" />
@@ -140,9 +141,13 @@
     <Text Include="remead.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.h" />
     <ClInclude Include="dateCheck.h" />
     <ClInclude Include="dateFill.h" />
     <ClInclude Include="fileHandle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\Download\schoolcalendar.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -30,6 +30,9 @@
     <ClCompile Include="dateCheck.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="date.txt">
@@ -49,5 +52,13 @@
     <ClInclude Include="fileHandle.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\Download\schoolcalendar.jpg">
+      <Filter>源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>
