@@ -14,7 +14,7 @@ void defenceMistake(int* checkVar,int start ,int over){                  //´ı¼ì²
 		if ((*checkVar) <= over && (*checkVar) >= start) {
 			break;
 		}else{
-			printf("Êı¾İÊäÈë´íÎóÇëÖØĞÂÊäÈë\n");
+			printf("Êı¾İÊäÈë´íÎó!!!ÇëÖØĞÂÊäÈë\n");
 		}
 	}
 }
