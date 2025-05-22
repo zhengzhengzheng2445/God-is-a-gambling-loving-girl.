@@ -1,10 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>//exit
+#include <time.h>
 #include "dateTrans.h"
 #include "defenceMistake.h"
 #include "test.h"
+#include "trans.h"
 #define NO 234567890
 void datetrans() {
+	time_t now;
+	struct tm* p;
+	time(&now);
+	p = localtime(&now);
+	int year = 1900 + p->tm_year;
 	while(1)
 	{
 		printf("请选择输入类型:\n1.校历\n2.阳历\n3.阴历\n0.退出程序\n4.返回主程序\n");
@@ -19,7 +26,7 @@ void datetrans() {
 			defenceMistake(&wday, 1, 7);
 			int smonth = week, sday = wday;
 			weekSolar(&smonth,&sday);
-			solarLunar(&smonth, &sday);
+			solarLunar(&smonth, &sday,year);
 		}
 		else if (2 == choice) {
 			int smonth = NO, sday = NO;
@@ -27,14 +34,14 @@ void datetrans() {
 			defenceMistake(&sday, 1, 31);
 			int week = smonth, wday = sday;
 			solarWeek(&week, &wday);
-			solarLunar(&smonth, &sday);
+			solarLunar(&smonth, &sday,year);
 		}
 		else if (3 == choice) {
 			int lmonth = NO, lday = NO;
 			defenceMistake(&lmonth, 1, 12);
 			defenceMistake(&lday, 1, 31);
 			int smonth = lmonth, sday = lday;
-		    lunarSolar(&lmonth, &lday);
+		    lunarSolar(&lmonth, &lday,year);
 			solarWeek(&lmonth, &lday);
 		}
 		else if (4 == choice) {

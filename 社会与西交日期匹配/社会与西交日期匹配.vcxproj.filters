@@ -51,6 +51,9 @@
     <ClCompile Include="solarLunarTrans.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="trans.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="date.txt">
@@ -80,6 +83,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="solarLunarTrans.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="trans.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

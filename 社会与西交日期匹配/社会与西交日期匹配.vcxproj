@@ -141,6 +141,7 @@
     <ClCompile Include="test.c" />
     <ClCompile Include="testc.c" />
     <ClCompile Include="timeGet.c" />
+    <ClCompile Include="trans.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="date.txt" />
@@ -154,6 +155,7 @@
     <ClInclude Include="fileHandle.h" />
     <ClInclude Include="solarLunarTrans.h" />
     <ClInclude Include="test.h" />
+    <ClInclude Include="trans.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
