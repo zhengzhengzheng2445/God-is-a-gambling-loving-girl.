@@ -2,11 +2,11 @@
 #include <stdio.h>           //头文件包含的库主文件没必要写了
 #include <stdlib.h>
 #include "dateCheck.h"          //日期判断,决定是否需要更新文件
-#include "dateFill.h"           //填充日期数组
+#include "dateHandle.h"           //填充日期数组
 #include "fileHandle.h"
 #include "defenceMistake.h"
 int main() {
-	int month = 0, day = 0, sum;
+	int month = 0, day = 0;
 	char schoolStartTime[1024];
 	printf("隐藏功能:\n0 1更新开学日期\n0 2打开校历\n\n");
 	while (1)
@@ -21,15 +21,9 @@ int main() {
 		else if (month == 0 && day == 1) {
 			char filepath[] = "date.txt";
 			FILE* tofile = fopen(filepath, "w");
-			if (NULL == tofile) {
-				printf("日期更新出错\n");
-				return 0;
-			}
+			FILE_CHECK(NULL == tofile, "日期更新出错");
 			int cresult = fclose(tofile);
-			if (0 != cresult) {
-				printf("更新关闭出错\n");
-				return 0;
-			}
+			FILE_CHECK(0 != cresult, "更新关闭出错");
 		}
 		else if (month == 0 && day == 2) {
 			system("schoolcalendar.jpg");
