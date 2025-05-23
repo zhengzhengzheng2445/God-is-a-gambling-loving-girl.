@@ -1,4 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
+#define FILE_CHECK(ptr,tip,standard)	\
+do{\
+    if ((ptr) == (standard)) {\
+          printf("%s\n",(tip));\
+          exit(-1);\
+     }\
+}while(0)  /*do,while没有啥含义就是个夹子,另外宏是直接替换,不是函数传参*/ 
+/*原始宏定义中的 printf("tip\n") 会导致直接输出字符串 "tip"，而非传入的提示参数。
+这是因为 tip 被包裹在双引号中，编译器会将其视为普通字符串，而非宏参数*/
 #include "fileHandle.h"
 #include "dateCheck.h" 
 #include <stdio.h>
@@ -8,28 +17,19 @@ void fileHandle(char schoolStartTime[]) {//记得最后必须得返回数字
 	int tem = dateCheck(), fcloseResult, fputsResult;
 	if (tem == 2 || tem == 1) {
 		FILE* writeFile = fopen(filePath, "w");
-		if (writeFile == NULL) {
-			printf("打不开\n");
-			exit(-1);
-		}
+		FILE_CHECK(writeFile, "打不开1",NULL);
 		printf("该更新日期了\n");
 		fcloseResult = fclose(writeFile);
-		if (fcloseResult != 0) {
-			printf("你写的破程序出bug关不了文件了1\n");
-			exit(-1);
-		}
+		FILE_CHECK(fcloseResult, "你写的破程序出bug关不了文件了1", 0);
 	}
 	FILE* updateFile = fopen(filePath, "a+");//w+打开就清空了
-	if (updateFile == NULL) {
-		printf("打不开\n");
-		exit(-1);
-	}
+	FILE_CHECK(updateFile, "打不开2",NULL);
 	int fileCheck = fgetc(updateFile);
 	if (fileCheck == -1)//千万分清int和char和字符串
 	{
 		char schoolStartInput[] = "20240307";//可以
 		printf("请输入这学期开学年月日\n示例:2024年3月7日开学\n20240307\n");
-		scanf("%s", &schoolStartInput);
+		scanf("%s", schoolStartInput);
 		fputsResult = fputs(schoolStartInput, updateFile);
 		if (fputsResult < 0) {
 			printf("写入文件失败\n");
@@ -49,21 +49,12 @@ void fileHandle(char schoolStartTime[]) {//记得最后必须得返回数字
 		}
 	}
 	FILE* readFile = fopen(filePath, "r");
-	if (readFile == NULL) {
-		printf("打不开\n");
-		exit(-1);
-	}
+	FILE_CHECK(readFile, "打不开3",NULL);
 	char* fgetsResult = fgets(schoolStartTime, 1024, readFile);
 	int tmp;
 	tmp = atoi(schoolStartTime);
 	sprintf(schoolStartTime, "%d", tmp);
-	if (fgetsResult == NULL) {
-		printf("你写的破程序出bug读不了文件了3\n");
-		exit(-1);
-	}
+	FILE_CHECK(fgetsResult, "你写的破程序出bug读不了文件了3", NULL);
 	fcloseResult = fclose(readFile);
-	if (fcloseResult != 0) {
-		printf("你写的破程序出bug关不了文件了4\n");
-		exit(-1);
-	}
+	FILE_CHECK(fcloseResult, "你写的破程序出bug关不了文件了4", 0);
 }
