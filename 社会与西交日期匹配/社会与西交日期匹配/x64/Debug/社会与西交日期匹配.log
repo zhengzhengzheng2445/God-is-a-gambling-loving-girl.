@@ -1,2 +1,4 @@
-﻿  mode.c
+﻿  dateFill.c
+  mode.c
+D:\develop\source\c作品集\各种项目\社会与西交日期匹配\mode.c(9,26): warning C4101: “sum”: 未引用的局部变量
   社会与西交日期匹配.vcxproj -> D:\develop\source\c作品集\各种项目\社会与西交日期匹配\x64\Debug\社会与西交日期匹配.exe
