@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.c" />
     <ClCompile Include="dateCheck.c" />
-    <ClCompile Include="dateFill.c" />
+    <ClCompile Include="dateHandle.c" />
     <ClCompile Include="fileHandle.c" />
     <ClCompile Include="mode.c">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
@@ -143,7 +143,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.h" />
     <ClInclude Include="dateCheck.h" />
-    <ClInclude Include="dateFill.h" />
+    <ClInclude Include="dateHandle.h" />
     <ClInclude Include="fileHandle.h" />
   </ItemGroup>
   <ItemGroup>

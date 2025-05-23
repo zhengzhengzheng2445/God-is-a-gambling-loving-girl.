@@ -1,9 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "dateFill.h"
+#include "dateHandle.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-void dateFill(int specificmonth,int specificday, char schoolStartTime[]) {
+void dateHandle(int specificmonth,int specificday, char schoolStartTime[]) {
 	int dayOfXjMonth[12] = { 30,31,30,31,31,28,31,30,31,30,31,31 }, MonthlyDayInTerm[12] = { 0 };//一个是长度,一个是索引.我服了//xj每个月的天数,用static数组里未定义的值是零,否则为垃圾值,后面的数组是西交这学期每个月的天数
 	char year[5], month[3], day[3];
 	strncpy(year, schoolStartTime + 0, 4);

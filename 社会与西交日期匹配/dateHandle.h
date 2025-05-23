@@ -1,4 +1,4 @@
-#ifndef DATEFILL_H
-#define DATEFILL_H
-void dateFill(int specificmonth, int specificday, char schoolStartTime[]);
+#ifndef DATEHANDLE_H
+#define DATEHANDLE_H
+void dateHandle(int specificmonth, int specificday, char schoolStartTime[]);
 #endif  
