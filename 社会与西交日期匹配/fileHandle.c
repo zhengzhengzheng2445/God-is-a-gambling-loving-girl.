@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
-#define FILE_CHECK(ptr,tip,standard)	\
+#define FILE_CHECK(ptr,tip)	\
 do{\
-    if ((ptr) == (standard)) {\
+    if (ptr) {\
           printf("%s\n",(tip));\
           exit(-1);\
      }\
@@ -12,18 +12,21 @@ do{\
 #include "dateCheck.h" 
 #include <stdio.h>
 #include <stdlib.h>   
+
 void fileHandle(char schoolStartTime[]) {//记得最后必须得返回数字
 	char* filePath = "date.txt";//相对路径
-	int tem = dateCheck(), fcloseResult, fputsResult;
+	int tem = dateCheck(), fcloseResult, fputsResult;//这里很巧妙,统一在最上面命名接收变量
 	if (tem == 2 || tem == 1) {
 		FILE* writeFile = fopen(filePath, "w");
-		FILE_CHECK(writeFile, "打不开1",NULL);
+		FILE_CHECK(writeFile==NULL, "打不开1");
 		printf("该更新日期了\n");
 		fcloseResult = fclose(writeFile);
-		FILE_CHECK(fcloseResult, "你写的破程序出bug关不了文件了1", 0);
+		FILE_CHECK(fcloseResult!=0, "你写的破程序出bug关不了文件了1");
 	}
+
 	FILE* updateFile = fopen(filePath, "a+");//w+打开就清空了
-	FILE_CHECK(updateFile, "打不开2",NULL);
+	FILE_CHECK(updateFile==NULL, "打不开2");
+
 	int fileCheck = fgetc(updateFile);
 	if (fileCheck == -1)//千万分清int和char和字符串
 	{
@@ -31,30 +34,18 @@ void fileHandle(char schoolStartTime[]) {//记得最后必须得返回数字
 		printf("请输入这学期开学年月日\n示例:2024年3月7日开学\n20240307\n");
 		scanf("%s", schoolStartInput);
 		fputsResult = fputs(schoolStartInput, updateFile);
-		if (fputsResult < 0) {
-			printf("写入文件失败\n");
-			exit(-1);
-		}
-		int cc = fclose(updateFile);
-		if (cc != 0) {
-			printf("你写的破程序出bug关不了文件了55\n");
-			exit(-1);
-		}
+		FILE_CHECK(fputsResult < 0, "写入文件失败");
 	}
-	if (fileCheck != -1) {
-		fcloseResult = fclose(updateFile);
-		if (fcloseResult != 0) {
-			printf("你写的破程序出bug关不了文件了2\n");
-			exit(-1);
-		}
-	}
-	FILE* readFile = fopen(filePath, "r");
-	FILE_CHECK(readFile, "打不开3",NULL);
-	char* fgetsResult = fgets(schoolStartTime, 1024, readFile);
+
+	rewind(updateFile);
+	int fres=fflush(updateFile);
+	FILE_CHECK(fres != 0, "刷新失败");
+
+	char* fgetsResult = fgets(schoolStartTime, 1024, updateFile);
 	int tmp;
 	tmp = atoi(schoolStartTime);
 	sprintf(schoolStartTime, "%d", tmp);
-	FILE_CHECK(fgetsResult, "你写的破程序出bug读不了文件了3", NULL);
-	fcloseResult = fclose(readFile);
-	FILE_CHECK(fcloseResult, "你写的破程序出bug关不了文件了4", 0);
+	FILE_CHECK(fgetsResult==NULL, "你写的破程序出bug读不了文件了3");
+	fcloseResult = fclose(updateFile);
+	FILE_CHECK(fcloseResult!=0, "你写的破程序出bug关不了文件了4");
 }
