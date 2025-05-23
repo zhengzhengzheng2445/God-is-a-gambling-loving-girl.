@@ -9,10 +9,10 @@ int main() {
 	int dayOfMonth[12] = { 0, 12, 31, 30, 31, 30, 31,0,0,0,0,0 };//xj每个月的天数,用static数组里未定义的值是零,否则为垃圾值
 	int month=0, day=0, sum;
 	char schoolStartTime[1024];
-	fileHandle(schoolStartTime);
-	printf("隐藏功能:\n0 2打开校历\n0 1更新开学日期\n\n");
+	printf("隐藏功能:\n0 1更新开学日期\n0 2打开校历\n\n");
 	while(1)
 	{
+		fileHandle(schoolStartTime);
 		sum = 0;//month,day,week,现在是星期几,总共多少天
 		printf("请输入日期(月 日,输入0 0退出程序):\n");
 		dateFill(dayOfMonth, schoolStartTime);
