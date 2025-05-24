@@ -25,10 +25,10 @@ void fileHandle(char schoolStartTime[]) {//记得最后必须得返回数字
 		char schoolStartInput[] = "20240307";//可以
 		printf("请输入这学期开学年月日\n示例:2024年3月7日开学\n20240307\n");
 		scanf("%8s", schoolStartInput);//用户输入8字符 → 自动追加\0（共占9字节，安全）用户输入 > 8字符 → 自动截断前8字符（安全）
+		cleanCache();
 		fputsResult = fputs(schoolStartInput, updateFile);
 		FILE_CHECK(fputsResult < 0, "写入文件失败");
 	}
-
 	rewind(updateFile);
 	int fres=fflush(updateFile);
 	FILE_CHECK(fres != 0, "刷新失败");

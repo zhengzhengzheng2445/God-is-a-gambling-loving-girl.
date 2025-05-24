@@ -13,6 +13,7 @@ int main() {
 	{
 		fileHandle(schoolStartTime);//month,day,week,现在是星期几,总共多少天
 		printf("请输入日期(月 日,输入0 0退出程序):\n");
+		fflush(stdout);
 		defenceMistake(&month, 0, 12);
 		defenceMistake(&day, 0, 31);
 		if (month == 0 && day == 0) {
