@@ -21,7 +21,7 @@ void dateHandle(int specificmonth,int specificday, char schoolStartTime[]) {
 	for (int i = 11; i > (monthNum + 3) % 12; i--) {
 		MonthlyDayInTerm[i] = dayOfXjMonth[i];
 	}
-	if (yearNum % 4 == 0) {
+	if ((yearNum % 4 == 0&& yearNum%100!=0)||(yearNum % 400 == 0)) {
 		MonthlyDayInTerm[5] += 1;
 	}
 

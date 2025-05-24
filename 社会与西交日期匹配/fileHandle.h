@@ -1,5 +1,4 @@
 #ifndef FILEHANDLE_H
 #define FILEHANDLE_H
 void fileHandle(char schoolStartTime[]);
-#endif // !FILLHANDLE_H
-
+#endif // !FILEHANDLE_H
