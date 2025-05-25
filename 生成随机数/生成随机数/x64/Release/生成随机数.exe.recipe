@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\develop\source\c作品集\各种项目\生成随机数\x64\Debug\生成随机数.exe</FullPath>
+      <FullPath>D:\develop\source\c作品集\各种项目\生成随机数\x64\Release\生成随机数.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

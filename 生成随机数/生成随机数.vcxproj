@@ -128,12 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="commonExecution.c" />
+    <ClCompile Include="defenceMistake.c" />
     <ClCompile Include="mode.c">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="shuffle.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="defenceMistake.h" />
     <ClInclude Include="randNum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
